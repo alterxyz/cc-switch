@@ -2607,7 +2607,8 @@ const piProviderPresetDefinitions: PiProviderPreset[] = [
       // openai-completions 通道没有 Mistral 专用处理，推理时流式 content 是
       // thinking/text 分块数组，走那条路会丢正文，故不用。档位映射照 Pi 内置
       // 目录：Large 4 只收 low / medium / high，Small 4 只收 none / high。
-      // 未经真 Key 冒烟
+      // 2026-11-08 用真 Key 经 Pi 1.5.0 冒烟：两模型对话、各思考档位（越界档位
+      // 由 Pi 收拢到可用档）、流式 thinking、并行工具调用与多轮回传均正常
       baseUrl: "https://api.mistral.ai",
       api: "mistral-conversations",
       apiKey: "",
